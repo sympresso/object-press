@@ -1,0 +1,17 @@
+{
+    "name": "sympresso/object-press",
+    "description": "Object oriented façade for WordPress",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin",
+            "email": "simpkevin@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sympresso\\ObjectPress\\": "src/Sympresso/ObjectPress/"
+        }
+    }
+}
