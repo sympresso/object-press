@@ -2,61 +2,59 @@
 
 namespace Sympresso\ObjectPress;
 
-use Sympresso\ObjectPress\Extension\ActionFunctions;
-use Sympresso\ObjectPress\Extension\AdminFunctions;
-use Sympresso\ObjectPress\Extension\AssetFunctions;
-use Sympresso\ObjectPress\Extension\BookmarkFunctions;
-use Sympresso\ObjectPress\Extension\CacheFunctions;
-use Sympresso\ObjectPress\Extension\CategoryFunctions;
-use Sympresso\ObjectPress\Extension\CommentFunctions;
-use Sympresso\ObjectPress\Extension\ConditionalFunctions;
-use Sympresso\ObjectPress\Extension\CookieFunctions;
-use Sympresso\ObjectPress\Extension\CronFunctions;
-use Sympresso\ObjectPress\Extension\DateTimeFunctions;
-use Sympresso\ObjectPress\Extension\EmbedFunctions;
-use Sympresso\ObjectPress\Extension\EnclosureFunctions;
-use Sympresso\ObjectPress\Extension\FeedFunctions;
-use Sympresso\ObjectPress\Extension\FileFunctions;
-use Sympresso\ObjectPress\Extension\FilterFunctions;
-use Sympresso\ObjectPress\Extension\FormattingFunctions;
-use Sympresso\ObjectPress\Extension\FormFunctions;
-use Sympresso\ObjectPress\Extension\HttpFunctions;
-use Sympresso\ObjectPress\Extension\HttpHeaderFunctions;
-use Sympresso\ObjectPress\Extension\JsonFunctions;
-use Sympresso\ObjectPress\Extension\LanguageFunctions;
-use Sympresso\ObjectPress\Extension\MailFunctions;
-use Sympresso\ObjectPress\Extension\MediaFunctions;
-use Sympresso\ObjectPress\Extension\MetaFunctions;
-use Sympresso\ObjectPress\Extension\MiscFunctions;
-use Sympresso\ObjectPress\Extension\MultisiteFunctions;
-use Sympresso\ObjectPress\Extension\NavFunctions;
-use Sympresso\ObjectPress\Extension\OptionFunctions;
-use Sympresso\ObjectPress\Extension\PageFunctions;
-use Sympresso\ObjectPress\Extension\PingFunctions;
-use Sympresso\ObjectPress\Extension\PluginFunctions;
-use Sympresso\ObjectPress\Extension\PostFunctions;
-use Sympresso\ObjectPress\Extension\PostTypeFunctions;
-use Sympresso\ObjectPress\Extension\QueryFunctions;
-use Sympresso\ObjectPress\Extension\RedirectFunctions;
-use Sympresso\ObjectPress\Extension\SecurityFunctions;
-use Sympresso\ObjectPress\Extension\SerializationFunctions;
-use Sympresso\ObjectPress\Extension\SettingFunctions;
-use Sympresso\ObjectPress\Extension\ShortcodeFunctions;
-use Sympresso\ObjectPress\Extension\SidebarFunctions;
-use Sympresso\ObjectPress\Extension\SqlFunctions;
-use Sympresso\ObjectPress\Extension\TagFunctions;
-use Sympresso\ObjectPress\Extension\TaxFunctions;
-use Sympresso\ObjectPress\Extension\TemplateFunctions;
-use Sympresso\ObjectPress\Extension\TermFunctions;
-use Sympresso\ObjectPress\Extension\ThemeFunctions;
-use Sympresso\ObjectPress\Extension\TracebackFunctions;
-use Sympresso\ObjectPress\Extension\TransientFunctions;
-use Sympresso\ObjectPress\Extension\UrlFunctions;
-use Sympresso\ObjectPress\Extension\UserFunctions;
-use Sympresso\ObjectPress\Extension\WidgetFunctions;
-use Sympresso\ObjectPress\Extension\WpExtension;
-use Sympresso\ObjectPress\Extension\WpGlobals;
-use Sympresso\ObjectPress\Extension\XmlrpcFunctions;
+use Sympresso\ObjectPress\CoreExtension\ActionFunctions;
+use Sympresso\ObjectPress\CoreExtension\AdminFunctions;
+use Sympresso\ObjectPress\CoreExtension\AssetFunctions;
+use Sympresso\ObjectPress\CoreExtension\BookmarkFunctions;
+use Sympresso\ObjectPress\CoreExtension\CacheFunctions;
+use Sympresso\ObjectPress\CoreExtension\CategoryFunctions;
+use Sympresso\ObjectPress\CoreExtension\CommentFunctions;
+use Sympresso\ObjectPress\CoreExtension\ConditionalFunctions;
+use Sympresso\ObjectPress\CoreExtension\CookieFunctions;
+use Sympresso\ObjectPress\CoreExtension\CronFunctions;
+use Sympresso\ObjectPress\CoreExtension\DateTimeFunctions;
+use Sympresso\ObjectPress\CoreExtension\EmbedFunctions;
+use Sympresso\ObjectPress\CoreExtension\EnclosureFunctions;
+use Sympresso\ObjectPress\CoreExtension\FeedFunctions;
+use Sympresso\ObjectPress\CoreExtension\FileFunctions;
+use Sympresso\ObjectPress\CoreExtension\FilterFunctions;
+use Sympresso\ObjectPress\CoreExtension\FormattingFunctions;
+use Sympresso\ObjectPress\CoreExtension\FormFunctions;
+use Sympresso\ObjectPress\CoreExtension\HttpFunctions;
+use Sympresso\ObjectPress\CoreExtension\HttpHeaderFunctions;
+use Sympresso\ObjectPress\CoreExtension\JsonFunctions;
+use Sympresso\ObjectPress\CoreExtension\LanguageFunctions;
+use Sympresso\ObjectPress\CoreExtension\MailFunctions;
+use Sympresso\ObjectPress\CoreExtension\MediaFunctions;
+use Sympresso\ObjectPress\CoreExtension\MetaFunctions;
+use Sympresso\ObjectPress\CoreExtension\MiscFunctions;
+use Sympresso\ObjectPress\CoreExtension\MultisiteFunctions;
+use Sympresso\ObjectPress\CoreExtension\NavFunctions;
+use Sympresso\ObjectPress\CoreExtension\OptionFunctions;
+use Sympresso\ObjectPress\CoreExtension\PageFunctions;
+use Sympresso\ObjectPress\CoreExtension\PingFunctions;
+use Sympresso\ObjectPress\CoreExtension\PluginFunctions;
+use Sympresso\ObjectPress\CoreExtension\PostFunctions;
+use Sympresso\ObjectPress\CoreExtension\PostTypeFunctions;
+use Sympresso\ObjectPress\CoreExtension\QueryFunctions;
+use Sympresso\ObjectPress\CoreExtension\RedirectFunctions;
+use Sympresso\ObjectPress\CoreExtension\SecurityFunctions;
+use Sympresso\ObjectPress\CoreExtension\SerializationFunctions;
+use Sympresso\ObjectPress\CoreExtension\SettingFunctions;
+use Sympresso\ObjectPress\CoreExtension\ShortcodeFunctions;
+use Sympresso\ObjectPress\CoreExtension\SidebarFunctions;
+use Sympresso\ObjectPress\CoreExtension\SqlFunctions;
+use Sympresso\ObjectPress\CoreExtension\TagFunctions;
+use Sympresso\ObjectPress\CoreExtension\TaxFunctions;
+use Sympresso\ObjectPress\CoreExtension\TemplateFunctions;
+use Sympresso\ObjectPress\CoreExtension\TermFunctions;
+use Sympresso\ObjectPress\CoreExtension\ThemeFunctions;
+use Sympresso\ObjectPress\CoreExtension\TracebackFunctions;
+use Sympresso\ObjectPress\CoreExtension\TransientFunctions;
+use Sympresso\ObjectPress\CoreExtension\UrlFunctions;
+use Sympresso\ObjectPress\CoreExtension\UserFunctions;
+use Sympresso\ObjectPress\CoreExtension\WidgetFunctions;
+use Sympresso\ObjectPress\CoreExtension\XmlrpcFunctions;
 
 class WordPress
 {
@@ -67,7 +65,7 @@ class WordPress
     protected $wpFunctions = array();
 
     /**
-     * @var WpGlobals
+     * @var Globals
      */
     protected $wpGlobals;
 
@@ -82,7 +80,7 @@ class WordPress
      */
     public function __construct(array $extensions = array())
     {
-        $this->wpGlobals   = new WpGlobals();
+        $this->wpGlobals   = new Globals();
         $defaultExtensions = array(
             ActionFunctions::FUNCTION_NAMESPACE        => new ActionFunctions(),
             AdminFunctions::FUNCTION_NAMESPACE         => new AdminFunctions(),
@@ -148,9 +146,9 @@ class WordPress
 
 
     /**
-     * @param WpExtension $extension
+     * @param Extension $extension
      */
-    public function addExtension(WpExtension $extension)
+    public function addExtension(Extension $extension)
     {
         $this->wpExtensions[$extension->__getNamespace()] = $extension;
 
