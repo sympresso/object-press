@@ -64,8 +64,8 @@ When you call a method on ObjectPress, it in turn calls the equivalent WordPress
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
 ### ObjectPress Function Groups
-- action - has_action, add_action, do_action, did_action, remove_action, remove_all_actions
-- admin - add_menu_page, remove_menu_page, add_submenu_page, remove_submenu_page, add_object_page, add_utility_page, add_comments_page, add_dashboard_page, add_links_page, add_management_page, add_media_page, add_options_page, add_pages_page, add_plugins_page, add_posts_page, add_theme_page, add_users_page, add_meta_box, remove_meta_box, add_editor_style, wp_editor, wp_get_image_editor, post_submit_meta_box
+- **action**- has_action, add_action, do_action, did_action, remove_action, remove_all_actions
+- **admin** - add_menu_page, remove_menu_page, add_submenu_page, remove_submenu_page, add_object_page, add_utility_page, add_comments_page, add_dashboard_page, add_links_page, add_management_page, add_media_page, add_options_page, add_pages_page, add_plugins_page, add_posts_page, add_theme_page, add_users_page, add_meta_box, remove_meta_box, add_editor_style, wp_editor, wp_get_image_editor, post_submit_meta_box
 - asset
 - bookmark
 - cache
