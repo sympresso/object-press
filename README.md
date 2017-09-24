@@ -57,7 +57,7 @@ The relevant code in this class for add_action() method is...
 
         }
 
-Notice: ObjectPress is just a simple facade.      
+Notice: *ObjectPress is just a simple facade.*    
 
 The functional signatures in ObjectPress are identical to the equivalent WordPress functions.   
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
