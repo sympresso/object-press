@@ -2,6 +2,8 @@
 
 namespace Sympresso\ObjectPress\CoreExtension;
 
+use Sympresso\ObjectPress\Extension;
+
 class FormFunctions extends Extension
 {
     const FUNCTION_NAMESPACE = 'form';

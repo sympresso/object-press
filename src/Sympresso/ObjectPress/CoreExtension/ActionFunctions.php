@@ -2,6 +2,7 @@
 
 namespace Sympresso\ObjectPress\CoreExtension;
 
+use Sympresso\ObjectPress\Extension;
 
 class ActionFunctions extends Extension
 {

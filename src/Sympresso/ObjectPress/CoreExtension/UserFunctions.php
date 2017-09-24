@@ -2,6 +2,8 @@
 
 namespace Sympresso\ObjectPress\CoreExtension;
 
+use Sympresso\ObjectPress\Extension;
+
 class UserFunctions extends Extension
 {
     const FUNCTION_NAMESPACE = 'user';

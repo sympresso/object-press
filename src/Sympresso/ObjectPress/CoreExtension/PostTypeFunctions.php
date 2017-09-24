@@ -2,6 +2,8 @@
 
 namespace Sympresso\ObjectPress\CoreExtension;
 
+use Sympresso\ObjectPress\Extension;
+
 class PostTypeFunctions extends Extension
 {
     const FUNCTION_NAMESPACE = 'post_type';

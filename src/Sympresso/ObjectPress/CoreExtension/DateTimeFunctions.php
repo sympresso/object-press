@@ -2,6 +2,8 @@
 
 namespace Sympresso\ObjectPress\CoreExtension;
 
+use Sympresso\ObjectPress\Extension;
+
 class DateTimeFunctions extends Extension
 {
     const FUNCTION_NAMESPACE = 'date_time';
