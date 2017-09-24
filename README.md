@@ -61,3 +61,54 @@ Notice, ObjectPress is just a simple facade.
 The functional signatures in ObjectPress are identical to the equivalent WordPress functions.   
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
+
+### ObjectPress Function Namespaces
+- Action
+- Admin
+- Bookmark
+- Cache
+- Category
+- Comment
+- Conditional
+- Cookie
+- Core
+- Cron
+- DateTime
+- Embeded
+- Enclosure
+- Feed
+- File
+- Filter
+- Formatting
+- Form
+- Http
+- Json
+- Language
+- Mail
+- Media
+- Meta
+- Misc
+- Multisite
+- Nav
+- Option
+- Page
+- Ping
+- Plugin
+- Post
+- Query
+- Redirect
+- Security
+- Serialization
+- Setting
+- Shortcode
+- Sidebar
+- Sql
+- Tag
+- Tax
+- Template
+- Term
+- Theme
+- Traceback
+- Transient
+- Url
+- Xmlrpc
