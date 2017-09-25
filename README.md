@@ -76,7 +76,7 @@ The key difference is that you don't have to call global functions in your code 
 - **cookie** - wp_clearcookie, wp_get_cookie_login, wp_set_auth_cookie
 - **cron** - spawn_cron, wp_clear_scheduled_hook, wp_cron, wp_get_schedule, wp_get_schedules, wp_next_scheduled, wp_reschedule_event, wp_schedule_event, wp_schedule_single_event, wp_unschedule_event
 - **date_time** - current_time, date_i18n, get_calendar, get_date_from_gmt, get_lastpostdate, get_lastpostmodified, get_day_link, get_gmt_from_date, get_month_link, the_date, get_the_date, the_time, get_the_time, the_modified_time, get_the_modified_time, get_weekstartend, get_year_link, human_time_diff, is_new_day, iso8601_timezone_to_offset, iso8601_to_datetime, mysql2date
-- embed
+- **embed** - wp_oembed_remove_provider, wp_embed_register_handler, wp_embed_unregister_handler, wp_embed_defaults, wp_oembed_get, wp_oembed_add_provider, wp_maybe_load_embeds, wp_embed_handler_youtube, wp_embed_handler_audio, wp_embed_handler_video, wp_oembed_register_route, wp_oembed_add_discovery_links, wp_oembed_add_host_js, get_post_embed_url, get_oembed_endpoint_url, get_post_embed_html, get_oembed_response_data, get_oembed_response_data_rich, wp_oembed_ensure_format, wp_filter_oembed_result, wp_embed_excerpt_more, the_excerpt_embed, wp_embed_excerpt_attachment, enqueue_embed_scripts, print_embed_styles, print_embed_scripts, print_embed_comments_button, print_embed_sharing_button, print_embed_sharing_dialog, the_embed_site_title, wp_filter_pre_oembed_result
 - enclosure
 - feed
 - file
