@@ -120,14 +120,21 @@ class WordPressTest extends TestCase
 
     public function testOverrideDefaults()
     {
-        $filterExtensionOverride = new FooExtension();
-        $sut = new WordPress(array($filterExtensionOverride));
+        $fooExtension = new FooExtension();
+        $sut = new WordPress(array($fooExtension));
         $this->assertInstanceOf(FooExtension::class, $sut->filter());
     }
 
     public function testConstructorException(){
-        $filterExtensionOverride = new BarExtension();
+        $barExtension = new BarExtension();
         $this->expectExceptionMessage('Invalid extension, it should implement Sympresso\ObjectPress\ExtensionInterface');
-        new WordPress(array($filterExtensionOverride));
+        new WordPress(array($barExtension));
+    }
+
+    public function testAddExtension(){
+        $zetaExtension = new ZetaExtension();
+        $sut = new WordPress();
+        $sut->addExtension($zetaExtension);
+        $this->assertInstanceOf(ZetaExtension::class, $sut->zeta);
     }
 }
