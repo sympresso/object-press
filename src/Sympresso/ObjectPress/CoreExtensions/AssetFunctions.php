@@ -6,7 +6,7 @@ use Sympresso\ObjectPress\AbstractExtension;
 
 class AssetFunctions extends AbstractExtension
 {
-    const FUNCTION_NAMESPACE = 'assets';
+    const FUNCTION_NAMESPACE = 'asset';
 
     /**
      * @return string

@@ -30,7 +30,7 @@ You can call the add_action() method under the action() group using ObjectPress.
 
     // Adding a WordPress action...
     $wp = new Sympresso\ObjectPress\WordPress();
-    $wp->action()->add_action('save_post',function($postId,$post){
+    $wp->action->add_action('save_post',function($postId,$post){
         // Business logic on action save_post goes here
     });
    
