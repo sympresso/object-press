@@ -11,18 +11,9 @@ class PostTypeFunctions extends Extension
     /**
      * @return string
      */
-    public function __getNamespace()
+    public function getFunctionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
-    }
-
-    /**
-     * https://developer.wordpress.org/reference/functions/paginate_links/
-     * @return array
-     */
-    public function __getGlobalVariables()
-    {
-        return array();
     }
 
     /**

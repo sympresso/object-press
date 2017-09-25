@@ -7,21 +7,24 @@ abstract class Extension
     /**
      * @return string
      */
-    abstract public function __getNamespace();
+    abstract public function getFunctionNamespace();
 
     /**
      * @return mixed
      */
-    abstract public function __getGlobalVariables();
+    public function getGlobalVariables(){
+        return array();
+    }
 
     /**
      * @return array
      */
-    public function __getExcludedFunctions()
+    public function getExcludedFunctions()
     {
         return array(
             'getNamespace',
-            'getGlobalVariables'
+            'getGlobalVariables',
+            'getExcludedFunctions',
         );
     }
 }

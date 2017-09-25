@@ -12,17 +12,9 @@ class JsonFunctions extends Extension
     /**
      * @return string
      */
-    public function __getNamespace()
+    public function getFunctionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
-    }
-
-    /**
-     * @return array
-     */
-    public function __getGlobalVariables()
-    {
-        return array();
     }
 
     /**

@@ -8,14 +8,9 @@ class TagFunctions extends Extension
 {
     const FUNCTION_NAMESPACE = 'tag';
 
-    public function __getNamespace()
+    public function getFunctionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
-    }
-
-    public function __getGlobalVariables()
-    {
-        return array();
     }
 
     /**

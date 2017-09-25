@@ -72,16 +72,17 @@ class WordPress
     /**
      * @var array
      */
-    protected $wpExtensions = array();
+    protected $extensions = array();
 
     /**
      * WordPress constructor.
-     * @param array $extensions
+     * @param array $overrides
+     * @throws \Exception
      */
-    public function __construct(array $extensions = array())
+    public function __construct(array $overrides = array())
     {
         $this->wpGlobals   = new Globals();
-        $defaultExtensions = array(
+        $extensions = array(
             ActionFunctions::FUNCTION_NAMESPACE        => new ActionFunctions(),
             AdminFunctions::FUNCTION_NAMESPACE         => new AdminFunctions(),
             AssetFunctions::FUNCTION_NAMESPACE         => new AssetFunctions(),
@@ -137,7 +138,12 @@ class WordPress
             XmlrpcFunctions::FUNCTION_NAMESPACE        => new XmlrpcFunctions(),
         );
 
-        $extensions = array_merge($defaultExtensions, $extensions);
+        foreach($overrides as $item){
+            if(!$item instanceof Extension){
+                throw new \Exception('Invalid extension, it should extend class Sympresso\ObjectPress');
+            }
+            $extensions[$item->getFunctionNamespace()] = $item;
+        }
 
         foreach ($extensions as $extension) {
             $this->addExtension($extension);
@@ -150,17 +156,17 @@ class WordPress
      */
     public function addExtension(Extension $extension)
     {
-        $this->wpExtensions[$extension->__getNamespace()] = $extension;
+        $this->extensions[$extension->getFunctionNamespace()] = $extension;
 
         $functions         = get_class_methods($extension);
-        $excludedFunctions = $extension->__getExcludedFunctions();
+        $excludedFunctions = $extension->getExcludedFunctions();
 
         foreach ($functions as $function) {
             if (!in_array($function, $excludedFunctions)) {
                 $this->wpFunctions[$function] = $extension;
             }
         }
-        $this->wpGlobals->addGlobals($extension->__getGlobalVariables());
+        $this->wpGlobals->addGlobals($extension->getGlobalVariables());
     }
 
     /**
@@ -182,8 +188,8 @@ class WordPress
      */
     public function __get($name)
     {
-        if (isset($this->wpExtensions[$name])) {
-            return $this->wpExtensions[$name];
+        if (isset($this->extensions[$name])) {
+            return $this->extensions[$name];
         }
     }
 
@@ -193,7 +199,7 @@ class WordPress
      */
     public function action()
     {
-        return $this->wpExtensions[ActionFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[ActionFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -202,7 +208,7 @@ class WordPress
      */
     public function admin()
     {
-        return $this->wpExtensions[AdminFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[AdminFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -211,7 +217,15 @@ class WordPress
      */
     public function asset()
     {
-        return $this->wpExtensions[AssetFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[AssetFunctions::FUNCTION_NAMESPACE];
+    }
+
+    /**
+     * Bookmark Functions
+     * @return BookmarkFunctions
+     */
+    public function bookmark(){
+        return $this->extensions[BookmarkFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -220,7 +234,7 @@ class WordPress
      */
     public function cache()
     {
-        return $this->wpExtensions[CacheFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[CacheFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -229,7 +243,7 @@ class WordPress
      */
     public function cat()
     {
-        return $this->wpExtensions[CategoryFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[CategoryFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -238,7 +252,7 @@ class WordPress
      */
     public function comment()
     {
-        return $this->wpExtensions[CommentFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[CommentFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -247,7 +261,7 @@ class WordPress
      */
     public function cond()
     {
-        return $this->wpExtensions[ConditionalFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[ConditionalFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -256,7 +270,7 @@ class WordPress
      */
     public function cookie()
     {
-        return $this->wpExtensions[CookieFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[CookieFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -264,7 +278,7 @@ class WordPress
      */
     public function cron()
     {
-        return $this->wpExtensions[CronFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[CronFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -273,7 +287,7 @@ class WordPress
      */
     public function date_time()
     {
-        return $this->wpExtensions[DateTimeFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[DateTimeFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -282,7 +296,7 @@ class WordPress
      */
     public function embed()
     {
-        return $this->wpExtensions[EmbedFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[EmbedFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -291,7 +305,7 @@ class WordPress
      */
     public function enclosure()
     {
-        return $this->wpExtensions[EnclosureFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[EnclosureFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -300,7 +314,7 @@ class WordPress
      */
     public function feed()
     {
-        return $this->wpExtensions[FeedFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[FeedFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -309,7 +323,7 @@ class WordPress
      */
     public function file()
     {
-        return $this->wpExtensions[FileFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[FileFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -318,7 +332,7 @@ class WordPress
      */
     public function filter()
     {
-        return $this->wpExtensions[FilterFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[FilterFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -327,7 +341,7 @@ class WordPress
      */
     public function formatting()
     {
-        return $this->wpExtensions[FormattingFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[FormattingFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -336,7 +350,7 @@ class WordPress
      */
     public function form()
     {
-        return $this->wpExtensions[FormFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[FormFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -345,7 +359,7 @@ class WordPress
      */
     public function http()
     {
-        return $this->wpExtensions[HttpFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[HttpFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -354,7 +368,7 @@ class WordPress
      */
     public function http_header()
     {
-        return $this->wpExtensions[HttpHeaderFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[HttpHeaderFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -363,7 +377,7 @@ class WordPress
      */
     public function json()
     {
-        return $this->wpExtensions[JsonFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[JsonFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -372,7 +386,7 @@ class WordPress
      */
     public function lang()
     {
-        return $this->wpExtensions[LanguageFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[LanguageFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -381,7 +395,7 @@ class WordPress
      */
     public function mail()
     {
-        return $this->wpExtensions[MailFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[MailFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -390,7 +404,7 @@ class WordPress
      */
     public function media()
     {
-        return $this->wpExtensions[MediaFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[MediaFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -399,7 +413,7 @@ class WordPress
      */
     public function meta()
     {
-        return $this->wpExtensions[MetaFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[MetaFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -408,7 +422,7 @@ class WordPress
      */
     public function misc()
     {
-        return $this->wpExtensions[MiscFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[MiscFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -417,7 +431,7 @@ class WordPress
      */
     public function multisite()
     {
-        return $this->wpExtensions[MultisiteFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[MultisiteFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -426,7 +440,7 @@ class WordPress
      */
     public function nav()
     {
-        return $this->wpExtensions[NavFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[NavFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -435,7 +449,7 @@ class WordPress
      */
     public function option()
     {
-        return $this->wpExtensions[OptionFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[OptionFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -444,7 +458,7 @@ class WordPress
      */
     public function page()
     {
-        return $this->wpExtensions[PageFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[PageFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -453,7 +467,7 @@ class WordPress
      */
     public function ping()
     {
-        return $this->wpExtensions[PingFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[PingFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -462,7 +476,7 @@ class WordPress
      */
     public function plugin()
     {
-        return $this->wpExtensions[PluginFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[PluginFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -471,7 +485,7 @@ class WordPress
      */
     public function post()
     {
-        return $this->wpExtensions[PostFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[PostFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -480,7 +494,7 @@ class WordPress
      */
     public function post_type()
     {
-        return $this->wpExtensions[PostTypeFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[PostTypeFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -489,7 +503,7 @@ class WordPress
      */
     public function query()
     {
-        return $this->wpExtensions[QueryFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[QueryFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -498,7 +512,7 @@ class WordPress
      */
     public function redirect()
     {
-        return $this->wpExtensions[RedirectFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[RedirectFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -507,7 +521,7 @@ class WordPress
      */
     public function security()
     {
-        return $this->wpExtensions[SecurityFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[SecurityFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -516,7 +530,7 @@ class WordPress
      */
     public function serialization()
     {
-        return $this->wpExtensions[SerializationFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[SerializationFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -525,7 +539,7 @@ class WordPress
      */
     public function setting()
     {
-        return $this->wpExtensions[SettingFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[SettingFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -534,7 +548,7 @@ class WordPress
      */
     public function shortcode()
     {
-        return $this->wpExtensions[ShortcodeFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[ShortcodeFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -543,7 +557,7 @@ class WordPress
      */
     public function sidebar()
     {
-        return $this->wpExtensions[SidebarFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[SidebarFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -552,7 +566,7 @@ class WordPress
      */
     public function sql()
     {
-        return $this->wpExtensions[SqlFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[SqlFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -561,7 +575,7 @@ class WordPress
      */
     public function tag()
     {
-        return $this->wpExtensions[TagFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TagFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -570,7 +584,7 @@ class WordPress
      */
     public function tax()
     {
-        return $this->wpExtensions[TaxFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TaxFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -579,7 +593,7 @@ class WordPress
      */
     public function template()
     {
-        return $this->wpExtensions[TemplateFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TemplateFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -588,7 +602,7 @@ class WordPress
      */
     public function term()
     {
-        return $this->wpExtensions[TermFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TermFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -597,7 +611,7 @@ class WordPress
      */
     public function theme()
     {
-        return $this->wpExtensions[ThemeFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[ThemeFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -606,7 +620,7 @@ class WordPress
      */
     public function traceback()
     {
-        return $this->wpExtensions[TracebackFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TracebackFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -615,7 +629,7 @@ class WordPress
      */
     public function transient()
     {
-        return $this->wpExtensions[TransientFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[TransientFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -624,7 +638,7 @@ class WordPress
      */
     public function url()
     {
-        return $this->wpExtensions[UrlFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[UrlFunctions::FUNCTION_NAMESPACE];
     }
 
     /**
@@ -633,6 +647,22 @@ class WordPress
      */
     public function user()
     {
-        return $this->wpExtensions[UserFunctions::FUNCTION_NAMESPACE];
+        return $this->extensions[UserFunctions::FUNCTION_NAMESPACE];
+    }
+
+    /**
+     * Widget Functions
+     * @return WidgetFunctions
+     */
+    public function widget(){
+        return $this->extensions[WidgetFunctions::FUNCTION_NAMESPACE];
+    }
+
+    /**
+     * XMLRPC Functions
+     * @return XmlrpcFunctions
+     */
+    public function xmlrpc(){
+        return $this->extensions[XmlrpcFunctions::FUNCTION_NAMESPACE];
     }
 }
