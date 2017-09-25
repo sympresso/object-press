@@ -64,7 +64,7 @@ The functional signatures in ObjectPress are identical to the equivalent WordPre
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
-### ObjectPress Function Namespaces
+### ObjectPress Namespaces and Functions
 - **action**- has_action, add_action, do_action, did_action, remove_action, remove_all_actions
 - **admin** - add_menu_page, remove_menu_page, add_submenu_page, remove_submenu_page, add_object_page, add_utility_page, add_comments_page, add_dashboard_page, add_links_page, add_management_page, add_media_page, add_options_page, add_pages_page, add_plugins_page, add_posts_page, add_theme_page, add_users_page, add_meta_box, remove_meta_box, add_editor_style, wp_editor, wp_get_image_editor, post_submit_meta_box
 - **asset** - wp_dequeue_script, wp_dequeue_style, wp_deregister_script, wp_deregister_style, wp_enqueue_script, wp_enqueue_style, wp_localize_script, wp_register_script, wp_register_style, wp_script_is, wp_style_is, wp_add_inline_style, get_locale_stylesheet_uri, get_stylesheet_uri, get_stylesheet, get_stylesheet_directory, get_stylesheet_directory_uri, locale_stylesheet
@@ -77,8 +77,8 @@ The key difference is that you don't have to call global functions in your code 
 - **cron** - spawn_cron, wp_clear_scheduled_hook, wp_cron, wp_get_schedule, wp_get_schedules, wp_next_scheduled, wp_reschedule_event, wp_schedule_event, wp_schedule_single_event, wp_unschedule_event
 - **date_time** - current_time, date_i18n, get_calendar, get_date_from_gmt, get_lastpostdate, get_lastpostmodified, get_day_link, get_gmt_from_date, get_month_link, the_date, get_the_date, the_time, get_the_time, the_modified_time, get_the_modified_time, get_weekstartend, get_year_link, human_time_diff, is_new_day, iso8601_timezone_to_offset, iso8601_to_datetime, mysql2date
 - **embed** - wp_oembed_remove_provider, wp_embed_register_handler, wp_embed_unregister_handler, wp_embed_defaults, wp_oembed_get, wp_oembed_add_provider, wp_maybe_load_embeds, wp_embed_handler_youtube, wp_embed_handler_audio, wp_embed_handler_video, wp_oembed_register_route, wp_oembed_add_discovery_links, wp_oembed_add_host_js, get_post_embed_url, get_oembed_endpoint_url, get_post_embed_html, get_oembed_response_data, get_oembed_response_data_rich, wp_oembed_ensure_format, wp_filter_oembed_result, wp_embed_excerpt_more, the_excerpt_embed, wp_embed_excerpt_attachment, enqueue_embed_scripts, print_embed_styles, print_embed_scripts, print_embed_comments_button, print_embed_sharing_button, print_embed_sharing_dialog, the_embed_site_title, wp_filter_pre_oembed_result
-- enclosure
-- feed
+- **enclosure** - get_enclosed, do_enclose
+- **feed** - bloginfo_rss, comment_author_rss, comment_text_rss, do_feed, do_feed_atom, do_feed_rdf, do_feed_rss, do_feed_rss2, fetch_feed, fetch_rss, get_author_feed_link, get_bloginfo_rss, get_category_feed_link, get_comment_author_rss, get_post_comments_feed_link, get_rss, get_search_comments_feed_link, get_search_feed_link, get_the_category_rss, get_the_title_rss, permalink_single_rss, post_comments_feed_link, rss_enclosure, the_title_rss, the_category_rss, the_content_rss, the_excerpt_rss, wp_rss
 - file
 - filter
 - formatting
