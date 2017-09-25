@@ -8,7 +8,7 @@ class TagFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'tag';
 
-    public function getFunctionNamespace()
+    public function getExtensionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
     }

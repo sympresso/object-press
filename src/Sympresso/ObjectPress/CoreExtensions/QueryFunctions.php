@@ -12,7 +12,7 @@ class QueryFunctions extends AbstractExtension
     /**
      * @return string
      */
-    public function getFunctionNamespace()
+    public function getExtensionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
     }

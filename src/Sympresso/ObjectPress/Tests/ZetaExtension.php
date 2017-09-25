@@ -6,7 +6,7 @@ use Sympresso\ObjectPress\AbstractExtension;
 
 class ZetaExtension extends AbstractExtension
 {
-    public function getFunctionNamespace()
+    public function getExtensionNamespace()
     {
         return 'zeta';
     }

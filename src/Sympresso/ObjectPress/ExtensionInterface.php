@@ -7,7 +7,7 @@ interface ExtensionInterface
     /**
      * @return string
      */
-    public function getFunctionNamespace();
+    public function getExtensionNamespace();
 
     /**
      * @return mixed

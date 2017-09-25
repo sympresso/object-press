@@ -7,7 +7,7 @@ abstract class AbstractExtension implements ExtensionInterface
     /**
      * @return string
      */
-    abstract public function getFunctionNamespace();
+    abstract public function getExtensionNamespace();
 
     /**
      * @return mixed

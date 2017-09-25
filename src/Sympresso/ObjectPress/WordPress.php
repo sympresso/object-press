@@ -466,7 +466,7 @@ class WordPress
             if (!$item instanceof ExtensionInterface) {
                 throw new \Exception('Invalid extension, it should implement Sympresso\ObjectPress\ExtensionInterface');
             }
-            $extensions[$item->getFunctionNamespace()] = $item;
+            $extensions[$item->getExtensionNamespace()] = $item;
         }
 
         foreach ($extensions as $extension) {
@@ -480,11 +480,11 @@ class WordPress
      */
     public function addExtension(ExtensionInterface $extension)
     {
-        $namespace = $extension->getFunctionNamespace();
+        $namespace = $extension->getExtensionNamespace();
         if (in_array($namespace, $this->coreExtensions)) {
             $this->$namespace = $extension;
         } else {
-            $this->extraExtensions[$extension->getFunctionNamespace()] = $extension;
+            $this->extraExtensions[$extension->getExtensionNamespace()] = $extension;
         }
 
         $functions = get_class_methods($extension);

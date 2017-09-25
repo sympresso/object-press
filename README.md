@@ -16,7 +16,7 @@ composer require sympresso/object-press
 
 The 900+ core WordPress functions have been grouped into over 50 classes.   
 For instance the functions **has_action**, **add_action**, **do_action** are all grouped under the namespace **action**.
-Each namespace is a public property of the Sympresso\ObjectPress\Wordpress object.
+For easy access, each core namespace is a public property of the Sympresso\ObjectPress\Wordpress object.
 
 For example, consider the WordPress function **add_action** which is used to hook into the internal functionality of WordPress.  
 In ObjectPress it is found in the class **Sympresso\ObjectPress\Extension\ActionFunctions**
@@ -64,7 +64,7 @@ The functional signatures in ObjectPress are identical to the equivalent WordPre
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
-### ObjectPress Function Groups
+### ObjectPress Function Namespaces
 - **action**- has_action, add_action, do_action, did_action, remove_action, remove_all_actions
 - **admin** - add_menu_page, remove_menu_page, add_submenu_page, remove_submenu_page, add_object_page, add_utility_page, add_comments_page, add_dashboard_page, add_links_page, add_management_page, add_media_page, add_options_page, add_pages_page, add_plugins_page, add_posts_page, add_theme_page, add_users_page, add_meta_box, remove_meta_box, add_editor_style, wp_editor, wp_get_image_editor, post_submit_meta_box
 - **asset** - wp_dequeue_script, wp_dequeue_style, wp_deregister_script, wp_deregister_style, wp_enqueue_script, wp_enqueue_style, wp_localize_script, wp_register_script, wp_register_style, wp_script_is, wp_style_is, wp_add_inline_style, get_locale_stylesheet_uri, get_stylesheet_uri, get_stylesheet, get_stylesheet_directory, get_stylesheet_directory_uri, locale_stylesheet

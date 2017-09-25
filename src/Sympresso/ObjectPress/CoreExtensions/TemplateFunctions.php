@@ -11,7 +11,7 @@ class TemplateFunctions extends AbstractExtension
     /**
      * @return string
      */
-    public function getFunctionNamespace()
+    public function getExtensionNamespace()
     {
         return self::FUNCTION_NAMESPACE;
     }
