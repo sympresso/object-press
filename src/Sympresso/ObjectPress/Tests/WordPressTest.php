@@ -127,7 +127,7 @@ class WordPressTest extends TestCase
 
     public function testConstructorException(){
         $filterExtensionOverride = new BarExtension();
-        $this->expectExceptionMessage('Invalid extension, it should extend class Sympresso\ObjectPress');
+        $this->expectExceptionMessage('Invalid extension, it should implement Sympresso\ObjectPress\ExtensionInterface');
         new WordPress(array($filterExtensionOverride));
     }
 }

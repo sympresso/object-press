@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class CategoryFunctions extends Extension
+class CategoryFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'cat';

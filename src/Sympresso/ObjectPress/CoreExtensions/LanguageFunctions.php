@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class LanguageFunctions extends Extension
+class LanguageFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'lang';
 

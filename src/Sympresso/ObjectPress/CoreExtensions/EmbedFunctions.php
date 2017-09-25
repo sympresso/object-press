@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class EmbedFunctions extends Extension
+class EmbedFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'embed';
 

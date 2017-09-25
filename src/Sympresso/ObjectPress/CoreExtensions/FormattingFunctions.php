@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class FormattingFunctions extends Extension
+class FormattingFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'formatting';

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class SqlFunctions extends Extension
+class SqlFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'sql';
 

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class BookmarkFunctions extends Extension
+class BookmarkFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'bookmark';
 

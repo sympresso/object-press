@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class PostFunctions extends Extension
+class PostFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'post';
 

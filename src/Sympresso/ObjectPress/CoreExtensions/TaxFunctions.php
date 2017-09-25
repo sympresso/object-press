@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class TaxFunctions extends Extension
+class TaxFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'tax';
 

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class ShortcodeFunctions extends Extension
+class ShortcodeFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'shortcode';
 

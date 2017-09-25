@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class EnclosureFunctions extends Extension
+class EnclosureFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'enclosure';

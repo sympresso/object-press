@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class MiscFunctions extends Extension
+class MiscFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'misc';

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class FileFunctions extends Extension
+class FileFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'file';
 

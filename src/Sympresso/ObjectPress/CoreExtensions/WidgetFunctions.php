@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class WidgetFunctions extends Extension
+class WidgetFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'widget';
 

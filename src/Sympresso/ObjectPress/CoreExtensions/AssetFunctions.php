@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class AssetFunctions extends Extension
+class AssetFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'assets';
 

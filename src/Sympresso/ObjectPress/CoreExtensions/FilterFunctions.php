@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class FilterFunctions extends Extension
+class FilterFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'filter';

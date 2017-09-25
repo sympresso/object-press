@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class QueryFunctions extends Extension
+class QueryFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'query';

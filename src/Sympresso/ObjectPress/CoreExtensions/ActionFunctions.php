@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class ActionFunctions extends Extension
+class ActionFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'action';
 

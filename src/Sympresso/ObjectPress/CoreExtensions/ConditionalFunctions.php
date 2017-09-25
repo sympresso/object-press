@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class ConditionalFunctions extends Extension
+class ConditionalFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'cond';
 

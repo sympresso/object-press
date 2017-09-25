@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class FormFunctions extends Extension
+class FormFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'form';
 

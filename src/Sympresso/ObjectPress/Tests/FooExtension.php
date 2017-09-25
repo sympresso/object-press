@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\Tests;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class FooExtension extends Extension
+class FooExtension extends AbstractExtension
 {
     public function getFunctionNamespace()
     {

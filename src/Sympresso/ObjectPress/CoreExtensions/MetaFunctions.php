@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class MetaFunctions extends Extension
+class MetaFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'meta';
 

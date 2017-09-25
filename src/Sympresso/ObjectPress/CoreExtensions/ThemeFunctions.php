@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class ThemeFunctions extends Extension
+class ThemeFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'theme';
 

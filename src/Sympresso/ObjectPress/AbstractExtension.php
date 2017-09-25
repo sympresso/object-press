@@ -2,7 +2,7 @@
 
 namespace Sympresso\ObjectPress;
 
-abstract class Extension
+abstract class AbstractExtension implements ExtensionInterface
 {
     /**
      * @return string

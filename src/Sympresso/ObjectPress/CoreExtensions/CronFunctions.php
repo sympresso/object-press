@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class CronFunctions extends Extension
+class CronFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'cron';
 

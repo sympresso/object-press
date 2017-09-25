@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class OptionFunctions extends Extension
+class OptionFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'option';
 

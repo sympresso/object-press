@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class SerializationFunctions extends Extension
+class SerializationFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'serialization';
 

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class SettingFunctions extends Extension
+class SettingFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'setting';
 

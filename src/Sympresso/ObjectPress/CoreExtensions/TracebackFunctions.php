@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class TracebackFunctions extends Extension
+class TracebackFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'traceback';
 

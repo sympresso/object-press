@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class TagFunctions extends Extension
+class TagFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'tag';
 

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class HttpFunctions extends Extension
+class HttpFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'http';
 

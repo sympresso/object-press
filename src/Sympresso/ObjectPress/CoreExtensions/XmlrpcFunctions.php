@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class XmlrpcFunctions extends Extension
+class XmlrpcFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'xmlrpc';
 

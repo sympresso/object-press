@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class AdminFunctions extends Extension
+class AdminFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'admin';
 

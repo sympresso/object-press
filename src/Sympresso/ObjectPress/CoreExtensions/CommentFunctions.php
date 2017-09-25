@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class CommentFunctions extends Extension
+class CommentFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'comment';

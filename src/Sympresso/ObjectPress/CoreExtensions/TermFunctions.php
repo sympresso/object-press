@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class TermFunctions extends Extension
+class TermFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'term';
 

@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class UrlFunctions extends Extension
+class UrlFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'url';
 

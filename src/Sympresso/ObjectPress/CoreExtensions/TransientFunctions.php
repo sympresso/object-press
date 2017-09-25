@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class TransientFunctions extends Extension
+class TransientFunctions extends AbstractExtension
 {
 
     const FUNCTION_NAMESPACE = 'transient';

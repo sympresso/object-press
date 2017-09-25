@@ -2,9 +2,9 @@
 
 namespace Sympresso\ObjectPress\CoreExtensions;
 
-use Sympresso\ObjectPress\Extension;
+use Sympresso\ObjectPress\AbstractExtension;
 
-class CookieFunctions extends Extension
+class CookieFunctions extends AbstractExtension
 {
     const FUNCTION_NAMESPACE = 'cookie';
 
