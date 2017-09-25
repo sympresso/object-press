@@ -15,7 +15,8 @@ composer require sympresso/object-press
 ### Usage
 
 The 900+ core WordPress functions have been grouped into over 50 classes.   
-For instance the functions **has_action**, **add_action**, **do_action** are all grouped into the group **action**.  
+For instance the functions **has_action**, **add_action**, **do_action** are all grouped under the namespace **action**.
+Each namespace is a public property of the Sympresso\ObjectPress\Wordpress object.
 
 For example, consider the WordPress function **add_action** which is used to hook into the internal functionality of WordPress.  
 In ObjectPress it is found in the class **Sympresso\ObjectPress\Extension\ActionFunctions**
@@ -26,7 +27,7 @@ Instead of calling add_action() directly...
         // Business logic on action save_post goes here
     });
 
-You can call the add_action() method under the action() group using ObjectPress...
+Using ObjectPress, you can call the add_action() method under the namespace **action** ...
 
     // Adding a WordPress action...
     $wp = new Sympresso\ObjectPress\WordPress();
