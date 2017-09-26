@@ -57,11 +57,9 @@ You can extend ObjectPress by creating an Extension.
 Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods **getExtensionNamespace**, **getGlobalVariables**, and **getExcludedFunctions**.
 When you register an extension, all the methods on the class become methods available on the WordPress object.
 
-getExtensionNamespace (string) - The unique namespace for your extension.  All functions defined in your extension will be available at $wp->{namespace}->{function}()
+getExtensionNamespace (string) - The unique namespace for your extension.
 getGlobalVariables (array) - An array of global variables exposed by your extension.
 getExcludedFunctions (array) - An array of methods of your extension to ignore.  Since by default all methods on an extension will be added.
-
-The core WordPress functions and global variables are added using extensions so you can use them for inspiration (located in Sympresso/ObjectPress/CoreExtensions).
 
 Here is a sample extension that adds the function foo() and global variable $fooGlobal ...
 
@@ -95,6 +93,10 @@ Now you can use the function and global variables...
     $wp->foo->bar()                 // namespace syntax
     $wp->bar()                      // alternative syntax
     $fooGlobal = $wp['fooGlobal']   // accessing global variable
+
+The core WordPress functions and global variables are added using extensions so you can use them for inspiration (located in Sympresso/ObjectPress/CoreExtensions).
+
+Note:  If you want to override the core extensions, pass an associative array using namespace as keys when you instantiate ObjectPress.
 
 ### ObjectPress Namespaces and Functions
 Here's a list of all the core WordPress functions supported:
