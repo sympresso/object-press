@@ -84,13 +84,13 @@ Here's a list of all the core WordPress functions supported:
 - **file** - unzip_file, validate_file, validate_file_to_edit, wp_check_filetype, wp_handle_sideload, wp_upload_bits, wp_upload_dir, wp_mkdir_p, wp_max_upload_size
 - **filter** - has_filter, add_filter, apply_filters, apply_filters_ref_array, current_filter, remove_filter, remove_all_filters
 - **formatting** - absint, add_magic_quotes, addslashes_gpc, antispambot, attribute_escape, backslashit, balanceTags, clean_pre, clean_url, convert_chars, convert_smilies, ent2ncr, esc_attr, esc_html, esc_js, esc_textarea, esc_sql, esc_url, esc_url_raw, force_balance_tags, format_to_edit, format_to_post, funky_javascript_fix, htmlentities2, is_email, js_escape, make_clickable, popuplinks, remove_accents, sanitize_email, sanitize_file_name, sanitize_html_class, sanitize_key, sanitize_mime_type, sanitize_option, sanitize_sql_orderby, sanitize_text_field, sanitize_title, sanitize_title_for_query, sanitize_comment_cookies, sanitize_title_with_dashes, sanitize_user, seems_utf8, stripslashes_deep, trailingslashit, untrailingslashit, urlencode_deep, url_shorten, utf8_uri_encode, wpautop, wptexturize, wp_filter_kses, wp_filter_post_kses, wp_filter_nohtml_kses, wp_iso_descrambler, wp_kses, wp_kses_array_lc, wp_kses_attr, wp_kses_bad_protocol, wp_kses_bad_protocol_once, wp_kses_bad_protocol_once2, wp_kses_check_attr_val, wp_kses_decode_entities, wp_kses_hair,wp_kses_hook, wwp_kses_html_error, wp_kses_js_entities, wp_kses_no_null, wp_kses_normalize_entities, wp_kses_normalize_entities2, wp_kses_split, wp_kses_split2, wp_kses_stripslashes, wp_kses_version, wp_make_link_relative, wp_normalize_path, wp_rel_nofollow, wp_richedit_pre, wp_specialchars, wp_trim_words, zeroise
-- form
-- http
-- http_header
-- json
-- lang (Language)
-- mail
-- media
+- **form** - checked, disabled, selected, submit_button, get_submit_button
+- **http** - wp_remote_get, wp_remote_retrieve_body, wp_get_http_headers,wp_remote_fopen
+- **http_header** - nocache_headers, status_header, cache_javascript_headers
+- **json** - wp_send_json, wp_send_json_error, wp_send_json_success
+- **lang (Language)** - __, _x, _n, _nx, _e, _ex, __ngettext, esc_attr__, esc_attr_e, get_locale, load_default_textdomain, load_plugin_textdomain, load_muplugin_textdomain, load_textdomain, load_theme_textdomain, is_rtl, wp_get_installed_translations, language_attributes, locale_stylesheet, get_locale_stylesheet_uri
+- **mail** - wp_mail, wp_new_user_notification, wp_password_change_notification, wp_notify_moderator, wp_notify_postauthor
+- **media** - get_attached_file, image_resize, is_attachment, is_local_attachment, set_post_thumbnail, update_attached_file, wp_attachment_is_image, wp_create_thumbnail, wp_insert_attachment, wp_delete_attachment, wp_get_attachment_image, wp_get_attachment_link, wp_get_attachment_image_src, wp_get_attachment_metadata, wp_get_attachment_thumb_file, wp_get_attachment_thumb_url, wp_get_attachment_url, wp_check_for_changed_slugs, wp_get_mime_types, wp_mime_type_icon, wp_generate_attachment_metadata, wp_prepare_attachment_for_js, wp_update_attachment_metadata
 - meta
 - misc
 - multisite

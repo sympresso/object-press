@@ -34,6 +34,17 @@ class PostFunctions extends AbstractExtension
     }
 
     /**
+     * https://developer.wordpress.org/reference/functions/wp_count_posts/
+     * @param string $type
+     * @param string $perm
+     * @return object
+     */
+    public function wp_count_posts($type = 'post', $perm = '')
+    {
+        return wp_count_posts($type, $perm);
+    }
+
+    /**
      * https://developer.wordpress.org/reference/functions/get_boundary_post/
      * @param bool $in_same_term
      * @param string $excluded_terms
