@@ -55,7 +55,7 @@ Notice: *ObjectPress is just a simple facade.*  When you call a method on Object
 ### WordPress Functions - Alternative Syntax
 
 Note: The WordPress object also implements the __call() magic method.
-If you prefer, you can call the the add_action directly on the WordPress object.
+If you prefer, you can skip the namespace and call the the add_action directly on the WordPress object.
 
     $wp = new Sympresso\ObjectPress\WordPress();
     $wp->add_action('save_post',function($postId,$post){
