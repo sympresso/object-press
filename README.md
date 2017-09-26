@@ -50,9 +50,7 @@ The relevant code in this class for add_action() method is...
 
         }
 
-Notice: *ObjectPress is just a simple facade.*
-When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
-The key difference is that you don't have to call global functions in your code (which will improve testability.)
+Notice: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
 ## Usage - WordPress Global Variables
 
