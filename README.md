@@ -52,16 +52,15 @@ The relevant code in this class for add_action() method is...
 
 Notice: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
-    Note: The WordPress object also implements the __call() magic method which delegates to the underlying function.
-    So the add_action function could be called either:
+## WordPress Functions - Alternative Syntax
 
-    (1) $wp->action->add_action('save_post',function($postId,$post){
-            // Business logic on action save_post goes here
-        });
+Note: The WordPress object also implements the __call() magic method.
+If you prefer, you can call the the add_action directly on the WordPress object.
 
-    (2) $wp->add_action('save_post',function($postId,$post){
-            // Business logic on action save_post goes here
-        });
+    $wp = new Sympresso\ObjectPress\WordPress();
+    $wp->add_action('save_post',function($postId,$post){
+        // Business logic on action save_post goes here
+    });
 
 
 ## Usage - WordPress Global Variables
