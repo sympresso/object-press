@@ -88,7 +88,7 @@ Here's a list of all the core WordPress functions supported:
 - **http** - wp_remote_get, wp_remote_retrieve_body, wp_get_http_headers,wp_remote_fopen
 - **http_header** - nocache_headers, status_header, cache_javascript_headers
 - **json** - wp_send_json, wp_send_json_error, wp_send_json_success
-- **lang (Language)** - __, _x, _n, _nx, _e, _ex, __ngettext, esc_attr__, esc_attr_e, get_locale, load_default_textdomain, load_plugin_textdomain, load_muplugin_textdomain, load_textdomain, load_theme_textdomain, is_rtl, wp_get_installed_translations, language_attributes, locale_stylesheet, get_locale_stylesheet_uri
+- **lang (Language)** - __, _x, _n, _nx, _e, _ex, \__ngettext, esc_attr__, esc_attr_e, get_locale, load_default_textdomain, load_plugin_textdomain, load_muplugin_textdomain, load_textdomain, load_theme_textdomain, is_rtl, wp_get_installed_translations, language_attributes, locale_stylesheet, get_locale_stylesheet_uri
 - **mail** - wp_mail, wp_new_user_notification, wp_password_change_notification, wp_notify_moderator, wp_notify_postauthor
 - **media** - get_attached_file, image_resize, is_attachment, is_local_attachment, set_post_thumbnail, update_attached_file, wp_attachment_is_image, wp_create_thumbnail, wp_insert_attachment, wp_delete_attachment, wp_get_attachment_image, wp_get_attachment_link, wp_get_attachment_image_src, wp_get_attachment_metadata, wp_get_attachment_thumb_file, wp_get_attachment_thumb_url, wp_get_attachment_url, wp_check_for_changed_slugs, wp_get_mime_types, wp_mime_type_icon, wp_generate_attachment_metadata, wp_prepare_attachment_for_js, wp_update_attachment_metadata
 - meta
