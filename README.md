@@ -54,12 +54,14 @@ For example, accessing the $post and $wpdb global variables...
 ## Extending ObjectPress
 
 You can extend ObjectPress by creating an Extension.
-Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods **getExtensionNamespace**, **getGlobalVariables**, and **getExcludedFunctions**.
+Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods that you will need to implement.
 When you register an extension, all the methods on the class become methods available on the WordPress object.
 
-getExtensionNamespace (string) - The unique namespace for your extension.
-getGlobalVariables (array) - An array of global variables exposed by your extension.
-getExcludedFunctions (array) - An array of methods of your extension to ignore.  Since by default all methods on an extension will be added.
+**getExtensionNamespace** (string) - The unique namespace for your extension.
+
+**getGlobalVariables** (array) - An array of global variables exposed by your extension.
+
+**getExcludedFunctions** (array) - An array of methods of your extension class to ignore (Since by default all methods on an extension will be added).
 
 Here is a sample extension that adds the function foo() and global variable $fooGlobal ...
 
