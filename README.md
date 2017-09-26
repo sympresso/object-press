@@ -96,15 +96,15 @@ Here's a list of all the core WordPress functions supported:
 - **setting** - register_setting, unregister_setting, settings_fields, do_settings_fields, do_settings_sections, add_settings_field, add_settings_section, add_settings_error, get_settings_errors, settings_errors
 - **shortcode** - add_shortcode, do_shortcode, do_shortcode_tag, get_shortcode_regex, remove_shortcode, remove_all_shortcodes, shortcode_atts, shortcode_parse_atts, strip_shortcodes
 - **sidebar** - get_sidebar, dynamic_sidebar, is_active_sidebar, is_dynamic_sidebar, register_sidebar, register_sidebars, unregister_sidebar
-- sql
-- tag
-- tax (Taxonomy)
-- template
-- term
-- theme
-- traceback
-- transient
-- url
-- user
-- widget
-- xmlrpc
+- **sql** - get_tax_sql, get_meta_sql, get_posts_by_author_sql
+- **tag** - get_tag, get_tag_link, get_tags, get_the_tag_list, get_the_tags, has_tag, is_tag, the_tags, single_tag_title, tag_description, wp_generate_tag_cloud, wp_tag_cloud
+- **tax (Taxonomy)** - get_object_taxonomies, get_edit_term_link, get_taxonomy, get_taxonomies, get_term, get_the_term_list, get_term_by, the_terms, get_the_terms, get_term_children, get_term_link, get_terms, is_taxonomy, is_tax, is_taxonomy_hierarchical, is_term, taxonomy_exists, term_exists, register_taxonomy, register_taxonomy_for_object_type, wp_get_object_terms, wp_remove_object_terms, wp_set_object_terms, wp_insert_term, wp_update_term, wp_delete_term, wp_terms_checklist
+- **template** - comments_template, get_footer, get_header, get_sidebar, get_search_form, add_custom_background, add_custom_image_header, add_image_size, add_image_size, body_class, dynamic_sidebar, get_404_template, get_archive_template, get_attachment_template, get_author_template, get_body_class, get_category_template, get_comments_popup_template, get_date_template, get_header_image, get_header_textcolor, get_home_template, get_page_template, get_paged_template, get_post_class, get_query_template, get_search_template, get_single_template, get_tag_template, get_taxonomy_template, get_template, get_template_directory, get_template_directory_uri, get_template_part, has_header_image, header_image, header_textcolor, in_the_loop, is_child_theme, language_attributes, load_template, locate_template, post_class, wp_get_archives, wp_title, comments_open, has_tag, pings_open, get_bloginfo, wp_footer, wp_head
+- **term** - wp_get_post_categories, wp_set_post_categories, wp_get_post_tags, wp_set_post_tags, wp_get_post_terms, wp_set_post_terms, wp_count_terms, has_term, is_object_in_term
+- **theme** - add_theme_support, current_theme_supports, get_current_theme, get_theme, wp_get_themes, get_theme_data, get_theme_support, get_theme_mod, get_theme_mods, get_theme_root, get_theme_roots, get_theme_root_uri, get_themes, preview_theme, preview_theme_ob_filter, preview_theme_ob_filter_callback, register_theme_directory, remove_theme_mod, remove_theme_mods, remove_theme_support, require_if_theme_supports, search_theme_directories, set_theme_mod, switch_theme, validate_current_theme, wp_get_theme, wp_clean_themes_cache
+- **traceback** - is_trackback, trackback, trackback_url, trackback_url_list, do_trackbacks
+- **transient** - set_transient, get_transient, delete_transient, set_site_transient, get_site_transient, delete_site_transient
+- **url** - add_rewrite_rule, admin_url, content_url, flush_rewrite_rules, home_url, includes_url, network_admin_url, network_home_url, network_site_url, plugin_dir_url, site_url
+- **user** - auth_redirect, count_users, count_user_posts, count_many_users_posts, email_exists, get_currentuserinfo, get_current_user_id, get_profile, get_user_by, get_userdata, get_usernumposts, get_users, set_current_user, user_pass_ok, wp_authenticate, username_exists, validate_username, wp_dropdown_users, wp_get_current_user, wp_set_current_user, wp_set_password, get_author_posts_url, get_the_modified_author, is_multi_author, add_user_meta, delete_user_meta, get_user_meta, update_user_meta, get_the_author_meta, wp_create_user, wp_delete_user, wp_insert_user, wp_update_user, is_user_logged_in, wp_login_form, wp_signon, wp_logout, wp_loginout, wp_logout_url
+- **widget** - is_active_widget, register_widget, the_widget, unregister_widget, wp_add_dashboard_widget, wp_convert_widget_settings, wp_get_sidebars_widgets, wp_get_widget_defaults, wp_register_sidebar_widget, wp_register_widget_control, wp_set_sidebars_widgets, wp_unregister_sidebar_widget, wp_unregister_widget_control, wp_widget_description
+- **xmlrpc** - xmlrpc_getpostcategory, xmlrpc_getposttitle, xmlrpc_removepostdata
