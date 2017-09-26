@@ -93,9 +93,9 @@ Here's a list of all the core WordPress functions supported:
 - **redirect** - wp_redirect, wp_safe_redirect
 - **security** - check_admin_referer, check_ajax_referer, wp_create_nonce, wp_explain_nonce, wp_get_original_referer, wp_get_referer, wp_nonce_ays, wp_nonce_field, wp_nonce_url, wp_original_referer_field, wp_referer_field, wp_verify_nonce, wp_salt, wp_hash
 - **serialization** - is_serialized, is_serialized_string, maybe_serialize, maybe_unserialize
-- setting
-- shortcode
-- sidebar
+- **setting** - register_setting, unregister_setting, settings_fields, do_settings_fields, do_settings_sections, add_settings_field, add_settings_section, add_settings_error, get_settings_errors, settings_errors
+- **shortcode** - add_shortcode, do_shortcode, do_shortcode_tag, get_shortcode_regex, remove_shortcode, remove_all_shortcodes, shortcode_atts, shortcode_parse_atts, strip_shortcodes
+- **sidebar** - get_sidebar, dynamic_sidebar, is_active_sidebar, is_dynamic_sidebar, register_sidebar, register_sidebars, unregister_sidebar
 - sql
 - tag
 - tax (Taxonomy)
