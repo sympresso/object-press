@@ -10,16 +10,16 @@ All 900+ core WordPress functions are available.
 
 ### Installation
 
-composer require sympresso/object-press
+    composer require sympresso/object-press
 
-### Usage
+### Usage - WordPress Functions
 
-The 900+ core WordPress functions have been grouped into over 50 classes.   
-For instance the functions **has_action**, **add_action**, **do_action** are all grouped under the namespace **action**.
-For easy access, each core namespace is a public property of the Sympresso\ObjectPress\Wordpress object.
+The 900+ core WordPress functions have been grouped into over 50 classes.
+Each of these classes are exposed as a public property of the Sympresso\ObjectPress\Wordpress object.
+For instance the functions **has_action**, **add_action**, **do_action** are all grouped under ActionFunctions the namespace **action**.
 
 For example, consider the WordPress function **add_action** which is used to hook into the internal functionality of WordPress.  
-In ObjectPress it is found in the class **Sympresso\ObjectPress\Extension\ActionFunctions**
+In ObjectPress it is found under the namespace **action**
 
 Instead of calling add_action() directly...
 
@@ -60,11 +60,13 @@ The relevant code in this class for add_action() method is...
 
 Notice: *ObjectPress is just a simple facade.*    
 
-The functional signatures in ObjectPress are identical to the equivalent WordPress functions.   
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
+## Usage - WordPress Global Variables
+
 ### ObjectPress Namespaces and Functions
+Here's a list of all the core WordPress functions supported:
 - **action**- has_action, add_action, do_action, did_action, remove_action, remove_all_actions
 - **admin** - add_menu_page, remove_menu_page, add_submenu_page, remove_submenu_page, add_object_page, add_utility_page, add_comments_page, add_dashboard_page, add_links_page, add_management_page, add_media_page, add_options_page, add_pages_page, add_plugins_page, add_posts_page, add_theme_page, add_users_page, add_meta_box, remove_meta_box, add_editor_style, wp_editor, wp_get_image_editor, post_submit_meta_box
 - **asset** - wp_dequeue_script, wp_dequeue_style, wp_deregister_script, wp_deregister_style, wp_enqueue_script, wp_enqueue_style, wp_localize_script, wp_register_script, wp_register_style, wp_script_is, wp_style_is, wp_add_inline_style, get_locale_stylesheet_uri, get_stylesheet_uri, get_stylesheet, get_stylesheet_directory, get_stylesheet_directory_uri, locale_stylesheet
@@ -79,9 +81,9 @@ The key difference is that you don't have to call global functions in your code 
 - **embed** - wp_oembed_remove_provider, wp_embed_register_handler, wp_embed_unregister_handler, wp_embed_defaults, wp_oembed_get, wp_oembed_add_provider, wp_maybe_load_embeds, wp_embed_handler_youtube, wp_embed_handler_audio, wp_embed_handler_video, wp_oembed_register_route, wp_oembed_add_discovery_links, wp_oembed_add_host_js, get_post_embed_url, get_oembed_endpoint_url, get_post_embed_html, get_oembed_response_data, get_oembed_response_data_rich, wp_oembed_ensure_format, wp_filter_oembed_result, wp_embed_excerpt_more, the_excerpt_embed, wp_embed_excerpt_attachment, enqueue_embed_scripts, print_embed_styles, print_embed_scripts, print_embed_comments_button, print_embed_sharing_button, print_embed_sharing_dialog, the_embed_site_title, wp_filter_pre_oembed_result
 - **enclosure** - get_enclosed, do_enclose
 - **feed** - bloginfo_rss, comment_author_rss, comment_text_rss, do_feed, do_feed_atom, do_feed_rdf, do_feed_rss, do_feed_rss2, fetch_feed, fetch_rss, get_author_feed_link, get_bloginfo_rss, get_category_feed_link, get_comment_author_rss, get_post_comments_feed_link, get_rss, get_search_comments_feed_link, get_search_feed_link, get_the_category_rss, get_the_title_rss, permalink_single_rss, post_comments_feed_link, rss_enclosure, the_title_rss, the_category_rss, the_content_rss, the_excerpt_rss, wp_rss
-- file
-- filter
-- formatting
+- **file** - unzip_file, validate_file, validate_file_to_edit, wp_check_filetype, wp_handle_sideload, wp_upload_bits, wp_upload_dir, wp_mkdir_p, wp_max_upload_size
+- **filter** - has_filter, add_filter, apply_filters, apply_filters_ref_array, current_filter, remove_filter, remove_all_filters
+- **formatting** - absint, add_magic_quotes, addslashes_gpc, antispambot, attribute_escape, backslashit, balanceTags, clean_pre, clean_url, convert_chars, convert_smilies, ent2ncr, esc_attr, esc_html, esc_js, esc_textarea, esc_sql, esc_url, esc_url_raw, force_balance_tags, format_to_edit, format_to_post, funky_javascript_fix, htmlentities2, is_email, js_escape, make_clickable, popuplinks, remove_accents, sanitize_email, sanitize_file_name, sanitize_html_class, sanitize_key, sanitize_mime_type, sanitize_option, sanitize_sql_orderby, sanitize_text_field, sanitize_title, sanitize_title_for_query, sanitize_comment_cookies, sanitize_title_with_dashes, sanitize_user, seems_utf8, stripslashes_deep, trailingslashit, untrailingslashit, urlencode_deep, url_shorten, utf8_uri_encode, wpautop, wptexturize, wp_filter_kses, wp_filter_post_kses, wp_filter_nohtml_kses, wp_iso_descrambler, wp_kses, wp_kses_array_lc, wp_kses_attr, wp_kses_bad_protocol, wp_kses_bad_protocol_once, wp_kses_bad_protocol_once2, wp_kses_check_attr_val, wp_kses_decode_entities, wp_kses_hair,wp_kses_hook, wwp_kses_html_error, wp_kses_js_entities, wp_kses_no_null, wp_kses_normalize_entities, wp_kses_normalize_entities2, wp_kses_split, wp_kses_split2, wp_kses_stripslashes, wp_kses_version, wp_make_link_relative, wp_normalize_path, wp_rel_nofollow, wp_richedit_pre, wp_specialchars, wp_trim_words, zeroise
 - form
 - http
 - http_header
