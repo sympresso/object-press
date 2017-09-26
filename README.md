@@ -14,11 +14,11 @@ All 900+ core WordPress functions are available.
 
 ### Usage - WordPress Functions
 
-The 900+ core WordPress functions have been grouped into over 50 classes.
+The 900+ core WordPress functions have been grouped into over 50 classes in ObjectPress.
 Each of these classes are exposed as a public property of the Sympresso\ObjectPress\Wordpress object.
 For instance the functions has_action, add_action, do_action are all grouped under ActionFunctions the property **action**.
 
-Using ObjectPress, you can call the add_action() ...
+Using ObjectPress, you can call the add_action() the following way...
 
     // Adding a WordPress action...
     $wp = new Sympresso\ObjectPress\WordPress();
@@ -30,7 +30,7 @@ Note: *ObjectPress is just a simple facade.*  When you call a method on ObjectPr
 
 ### Alternative Syntax
 
-The WordPress object also implements the __call() magic method.
+The Sympresso\ObjectPress\Wordpress object also implements the __call() magic method.
 If you prefer, you can skip the property and call the the add_action directly on the WordPress object.
 
     $wp = new Sympresso\ObjectPress\WordPress();
@@ -38,12 +38,12 @@ If you prefer, you can skip the property and call the the add_action directly on
         // Business logic on action save_post goes here
     });
 
-The alternative syntax doesn't have the benefit of autocomplete with your IDE but it can be handy.
+Note: The alternative syntax doesn't have the benefit of autocomplete.
 
 ## Usage - WordPress Global Variables
 
-WordPress has many global variables (https://codex.wordpress.org/Global_Variables) that are also accessible.
-To access these global variables, just access their variable name on the WordPress object as if it was an array.
+WordPress has many global variables (https://codex.wordpress.org/Global_Variables).
+To access these global variables, just access their variable name on the Sympresso\ObjectPress\Wordpress object as if it was an array.
 
 For example, accessing the $post and $wpdb global variables...
 
@@ -55,7 +55,9 @@ For example, accessing the $post and $wpdb global variables...
 
 You can extend ObjectPress by creating an Extension.
 Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods that you will need to implement.
-When you register an extension, all the methods on the class become methods available on the WordPress object.
+When you register an extension, all the methods on the class become methods available on the WordPress object and a public property will be dynamically added with the namesspace of your extension.
+
+The methods you will need to implementL
 
 **getExtensionNamespace** (string) - The unique namespace for your extension.
 
@@ -98,7 +100,8 @@ Now you can use the function and global variables...
 
 The core WordPress functions and global variables are added using extensions so you can use them for inspiration (located in Sympresso/ObjectPress/CoreExtensions).
 
-Note:  If you want to override the core extensions, pass an associative array using namespace as keys when you instantiate ObjectPress.
+Note:  You can also override the core extensions by passing an array of extensions to the Sympresso\ObjectPress\WordPress constructor.
+Be sure to use the same namespace string of the namespace you want to replace.
 
 ### ObjectPress Namespaces and Functions
 Here's a list of all the core WordPress functions supported:
