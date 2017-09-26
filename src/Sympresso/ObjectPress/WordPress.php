@@ -56,9 +56,8 @@ use Sympresso\ObjectPress\CoreExtensions\UserFunctions;
 use Sympresso\ObjectPress\CoreExtensions\WidgetFunctions;
 use Sympresso\ObjectPress\CoreExtensions\XmlrpcFunctions;
 
-class WordPress
+class WordPress implements \ArrayAccess
 {
-
     /**
      * @var array
      */
@@ -520,5 +519,40 @@ class WordPress
         if (isset($this->extraExtensions[$name])) {
             return $this->extraExtensions[$name];
         }
+    }
+
+    /**
+     * @param mixed $offset
+     * @return bool
+     */
+    public function offsetExists($offset)
+    {
+        return $this->wpGlobals->offsetExists($offset);
+    }
+
+    /**
+     * @param mixed $offset
+     * @return mixed
+     */
+    public function offsetGet($offset)
+    {
+        return $this->wpGlobals->offsetGet($offset);
+    }
+
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->wpGlobals->offsetSet($offset, $value);
+    }
+
+    /**
+     * @param mixed $offset
+     */
+    public function offsetUnset($offset)
+    {
+        $this->wpGlobals->offsetUnset($offset);
     }
 }

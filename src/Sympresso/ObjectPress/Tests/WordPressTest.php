@@ -137,4 +137,17 @@ class WordPressTest extends TestCase
         $sut->addExtension($zetaExtension);
         $this->assertInstanceOf(ZetaExtension::class, $sut->zeta);
     }
+
+    public function testGlobals(){
+        global $fooGlobal;
+        $fooGlobal = 'bar';
+        $this->testGlobals2();
+    }
+
+    public function testGlobals2(){
+        $zetaExtension = new ZetaExtension();
+        $sut = new WordPress();
+        $sut->addExtension($zetaExtension);
+        $this->assertEquals('bar', $sut['fooGlobal']);
+    }
 }

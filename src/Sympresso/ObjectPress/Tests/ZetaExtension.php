@@ -20,4 +20,11 @@ class ZetaExtension extends AbstractExtension
     {
 
     }
+
+    public function getGlobalVariables()
+    {
+        return array(
+            'fooGlobal',
+        );
+    }
 }
