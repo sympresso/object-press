@@ -487,7 +487,13 @@ class WordPress implements \ArrayAccess
         }
 
         $functions = get_class_methods($extension);
-        $excludedFunctions = $extension->getExcludedFunctions();
+        $excludedFunctions = array_merge(
+            $extension->getExcludedFunctions(),
+            array(
+                'getNamespace',
+                'getGlobalVariables',
+                'getExcludedFunctions',
+            ));
 
         foreach ($functions as $function) {
             if (!in_array($function, $excludedFunctions)) {

@@ -21,10 +21,6 @@ abstract class AbstractExtension implements ExtensionInterface
      */
     public function getExcludedFunctions()
     {
-        return array(
-            'getNamespace',
-            'getGlobalVariables',
-            'getExcludedFunctions',
-        );
+        return array();
     }
 }

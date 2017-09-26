@@ -29,7 +29,7 @@ Using ObjectPress, you can call the add_action() method under the namespace acti
 
 Note: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
-### WordPress Functions - Alternative Syntax
+### Alternative Syntax
 
 The WordPress object also implements the __call() magic method.
 If you prefer, you can skip the namespace and call the the add_action directly on the WordPress object.
@@ -43,12 +43,58 @@ If you prefer, you can skip the namespace and call the the add_action directly o
 ## Usage - WordPress Global Variables
 
 WordPress has many global variables (https://codex.wordpress.org/Global_Variables) that are also accessible.
-The WordPress object implements the \ArrayAccess interface that delegates to the global variables.
+To access these global variables, just access their variable name on the WordPress object as if it was an array.
 
-For example, accessing the $post global variable...
+For example, accessing the $post and $wpdb global variables...
 
     $wp = new Sympresso\ObjectPress\WordPress();
     $post = $wp['post'];
+    $wpdb = $wp['wpdb'];
+
+## Extending ObjectPress
+
+You can extend ObjectPress by creating an Extension.
+Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods **getExtensionNamespace**, **getGlobalVariables**, and **getExcludedFunctions**.
+When you register an extension, all the methods on the class become methods available on the WordPress object.
+
+getExtensionNamespace (string) - The unique namespace for your extension.  All functions defined in your extension will be available at $wp->{namespace}->{function}()
+getGlobalVariables (array) - An array of global variables exposed by your extension.
+getExcludedFunctions (array) - An array of methods of your extension to ignore.  Since by default all methods on an extension will be added.
+
+The core WordPress functions and global variables are added using extensions so you can use them for inspiration (located in Sympresso/ObjectPress/CoreExtensions).
+
+Here is a sample extension that adds the function foo() and global variable $fooGlobal ...
+
+    use Sympresso\ObjectPress\AbstractExtension;
+
+    class FooExtension extends AbstractExtension
+    {
+        function bar()
+        {
+            // business logic goes here
+        }
+
+        function getExtensionNamespace()
+        {
+            return 'foo';
+        }
+
+        function getGlobalVariables()
+        {
+            return array('fooGlobal');
+        }
+    }
+
+Next you register your extension...
+
+    $wp = new Sympresso\ObjectPress\WordPress();
+    $wp->addExtension(new FooExtension());
+
+Now you can use the function and global variables...
+
+    $wp->foo->bar()                 // namespace syntax
+    $wp->bar()                      // alternative syntax
+    $fooGlobal = $wp['fooGlobal']   // accessing global variable
 
 ### ObjectPress Namespaces and Functions
 Here's a list of all the core WordPress functions supported:
