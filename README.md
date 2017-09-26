@@ -52,7 +52,7 @@ The relevant code in this class for add_action() method is...
 
 Notice: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
-## WordPress Functions - Alternative Syntax
+### WordPress Functions - Alternative Syntax
 
 Note: The WordPress object also implements the __call() magic method.
 If you prefer, you can call the the add_action directly on the WordPress object.
@@ -64,6 +64,14 @@ If you prefer, you can call the the add_action directly on the WordPress object.
 
 
 ## Usage - WordPress Global Variables
+
+WordPress has many global variables (https://codex.wordpress.org/Global_Variables) that are also accessible.
+The WordPress object implements the \ArrayAccess interface that delegates to the global variables.
+
+For example, accessing the $post global variable...
+
+    $wp = new Sympresso\ObjectPress\WordPress();
+    $post = $wp['post'];
 
 ### ObjectPress Namespaces and Functions
 Here's a list of all the core WordPress functions supported:
