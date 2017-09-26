@@ -18,15 +18,7 @@ The 900+ core WordPress functions have been grouped into over 50 classes.
 Each of these classes are exposed as a public property of the Sympresso\ObjectPress\Wordpress object.
 For instance the functions **has_action**, **add_action**, **do_action** are all grouped under ActionFunctions the namespace **action**.
 
-For example, consider the WordPress function **add_action** which is used to hook into the internal functionality of WordPress.  
-In ObjectPress it is found under the namespace **action**
-
-Instead of calling add_action() directly...
-
-    add_action('save_post',function($postId,$post){
-        // Business logic on action save_post goes here
-    });
-
+For example, consider the WordPress function **add_action**, in ObjectPress it is found under the namespace **action**
 Using ObjectPress, you can call the add_action() method under the namespace **action** ...
 
     // Adding a WordPress action...
@@ -58,8 +50,7 @@ The relevant code in this class for add_action() method is...
 
         }
 
-Notice: *ObjectPress is just a simple facade.*    
-
+Notice: *ObjectPress is just a simple facade.*
 When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.   
 The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
