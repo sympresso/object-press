@@ -98,8 +98,8 @@ Here's a list of all the core WordPress functions supported:
 - **option** - add_option, add_site_option, delete_option, delete_site_option, form_option, get_alloptions, get_site_option, get_site_url, get_admin_url, get_user_option, get_option, update_option, update_site_option, update_user_option, wp_load_alloptions
 - **page** - get_all_page_ids, get_ancestors, get_page, get_page_link, get_page_by_path, get_page_by_title, get_page_children, get_page_hierarchy, get_page_uri, get_pages, is_page, wp_link_pages, wp_list_pages, wp_page_menu, wp_dropdown_pages
 - **ping** - add_ping, pingback, privacy_ping_filter, discover_pingback_server_uri, do_all_pings, generic_ping, get_pung, get_to_ping, weblog_ping, pings_open
-- plugin
-- post
+- **plugin** - plugin_basename, plugins_url, get_plugin_data, get_admin_page_title, plugin_dir_path, register_activation_hook, register_deactivation_hook, menu_page_url, is_plugin_active, is_plugin_active_for_network, is_plugin_inactive, is_plugin_page, add_contextual_help, get_plugins, plugin_dir_url
+- **post** - get_boundary_post, get_children, get_extended, get_next_post, get_next_posts_link, next_posts_link, get_permalink, the_permalink, get_the_excerpt, the_excerpt, get_the_post_thumbnail, get_post, get_post_field, get_post_ancestors, get_post_mime_type, get_post_status, get_post_format, set_post_format, get_edit_post_link, get_delete_post_link, get_previous_post, get_previous_posts_link, previous_posts_link, get_posts, have_posts, get_the_ID, the_ID, the_post, wp_get_recent_posts, wp_get_single_post, has_post_thumbnail, has_excerpt, has_post_format, register_post_status, wp_delete_post, wp_insert_post, wp_publish_post, wp_trash_post, wp_update_post, get_the_author, the_author, get_the_author_posts, get_the_content, the_content, get_the_title, the_title, the_title_attribute, wp_trim_excerpt, wp_get_post_revision, wp_get_post_revisions, wp_is_post_revision, paginate_links, get_post_stati, get_post_statuses, post_class, count_user_posts, count_many_users_posts, get_usernumposts
 - query
 - redirect
 - security
