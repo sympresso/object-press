@@ -26,31 +26,8 @@ Using ObjectPress, you can call the add_action() method under the namespace acti
     $wp->action->add_action('save_post',function($postId,$post){
         // Business logic on action save_post goes here
     });
-   
-You might be wondering, what is going on behind the scenes.   
-The relevant code in this class for add_action() method is...
 
-        namespace Sympresso\ObjectPress\Extension
-        
-        class ActionFunctions
-        {
-
-            /**
-             * https://developer.wordpress.org/reference/functions/add_action/
-             * @param $tag
-             * @param $function_to_add
-             * @param int $priority
-             * @param int $accepted_args
-             * @return true|void
-             */
-            public function add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)
-            {
-                return add_action($tag, $function_to_add, $priority, $accepted_args);
-            }
-
-        }
-
-Notice: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
+Note: *ObjectPress is just a simple facade.*  When you call a method on ObjectPress, it in turn calls the equivalent WordPress function.  The key difference is that you don't have to call global functions in your code (which will improve testability.)
 
 ### WordPress Functions - Alternative Syntax
 
