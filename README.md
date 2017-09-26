@@ -16,10 +16,10 @@ All 900+ core WordPress functions are available.
 
 The 900+ core WordPress functions have been grouped into over 50 classes.
 Each of these classes are exposed as a public property of the Sympresso\ObjectPress\Wordpress object.
-For instance the functions **has_action**, **add_action**, **do_action** are all grouped under ActionFunctions the namespace **action**.
+For instance the functions has_action, add_action, do_action are all grouped under ActionFunctions the namespace **action**.
 
-For example, consider the WordPress function **add_action**, in ObjectPress it is found under the namespace **action**
-Using ObjectPress, you can call the add_action() method under the namespace **action** ...
+For example, consider the WordPress function add_action, in ObjectPress it is found under the namespace action.
+Using ObjectPress, you can call the add_action() method under the namespace action ...
 
     // Adding a WordPress action...
     $wp = new Sympresso\ObjectPress\WordPress();
