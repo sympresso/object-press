@@ -57,7 +57,7 @@ You can extend ObjectPress by creating an Extension.
 Extensions in ObjectPress implement the Sympresso\ObjectPress\ExtensionInterface which has three methods that you will need to implement.
 When you register an extension, all the methods on the class become methods available on the WordPress object and a public property will be dynamically added with the namesspace of your extension.
 
-The methods you will need to implementL
+The methods you will need to implement:
 
 **getExtensionNamespace** (string) - The unique namespace for your extension.
 
