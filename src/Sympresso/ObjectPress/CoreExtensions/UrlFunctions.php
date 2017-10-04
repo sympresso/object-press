@@ -132,4 +132,13 @@ class UrlFunctions extends AbstractExtension
     {
         return site_url($path, $scheme);
     }
+
+    /**
+     * https://developer.wordpress.org/reference/functions/get_search_link/
+     * @param string $query
+     * @return mixed
+     */
+    public function get_search_link($query = ''){
+        return get_search_link($query);
+    }
 }
