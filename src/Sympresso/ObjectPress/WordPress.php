@@ -451,7 +451,6 @@ class WordPress implements \ArrayAccess
             TagFunctions::FUNCTION_NAMESPACE => new TagFunctions(),
             TaxFunctions::FUNCTION_NAMESPACE => new TaxFunctions(),
             TemplateFunctions::FUNCTION_NAMESPACE => new TemplateFunctions(),
-            TermFunctions::FUNCTION_NAMESPACE => new TermFunctions(),
             ThemeFunctions::FUNCTION_NAMESPACE => new ThemeFunctions(),
             TracebackFunctions::FUNCTION_NAMESPACE => new TracebackFunctions(),
             TransientFunctions::FUNCTION_NAMESPACE => new TransientFunctions(),
